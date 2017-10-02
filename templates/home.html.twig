@@ -2,12 +2,20 @@
 {% block body %}
     <div>
 
-        <a href="{{ path('productsList') }}" class="product__link">Go to product list</a><br>
+        <a href="{{ path('productsList') }}" class="product__link">Go to product list</a>
         <a href="{{ path('categories') }}" class="product__link">Go to categories list</a>
+
+        <br>
+
+        <h1>Last cats :</h1>
 
         {% for product in products %}
 
-            {{ product.name }}
+            <div class="product">
+                <div class="product__thumbnail" style="background-image: url('/uploads/{{ product.image }}')"></div>
+                <h1 class="product__title">{{ product.name }}</h1>
+                <a href="{{ path('single', { 'id' : product.id  }) }}" class="product__link">More details about this cat</a>
+            </div>
 
         {% endfor %}
 
