@@ -61,9 +61,31 @@ p {
   margin: 5px;
   max-width: 30%;
 
-  &__comment {
-    width: auto;
-    background: red;
+  &__comments {
+    position: absolute;
+    right: 5px;
+    width: 30%;
+    &__single {
+      padding: 15px;
+      border-bottom: 3px solid dodgerblue;
+      &:nth-child(odd) {
+        background: rgba(0, 0, 0, .07);
+      }
+    }
+    &__author {
+      display: block;
+      color: rgba(0, 0, 0, .5);
+      font-style: italic;
+      font-weight: lighter;
+      font-size: 14px;
+      text-align: right;
+    }
+    form {
+      display: block;
+      margin-top: 50px;
+      padding: 0 15px 15px 15px;
+      border-bottom: 3px solid dodgerblue;
+    }
   }
 
   &.single {

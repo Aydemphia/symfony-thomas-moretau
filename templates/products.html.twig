@@ -3,7 +3,8 @@
 
     <header>
         <h1>Our cats</h1>
-        <a href="{{ path('form') }}" class="product__link">Add a product</a>
+        <a href="{{ path('form') }}" class="product__link">Add a product</a><br>
+        <a href="{{ path('categories') }}" class="product__link">See all categories</a>
     </header>
 
     {% for product in products %}

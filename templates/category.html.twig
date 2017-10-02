@@ -1,7 +1,11 @@
 {% extends 'base.html.twig' %}
 {% block body %}
 
-    <h1 class="categories_name">Tous nos {{ category.name }}</h1>
+    <p class="center">
+        <a href="{{ path('productsList') }}" class="product__link">Go back to cat list</a>
+    </p>
+
+    <h1 class="categories_name">All our <i>{{ category.name }}</i></h1>
 
     {% for product in category.products %}
         <div class="product">
@@ -11,6 +15,10 @@
             <a href="{{ path('single', { 'id' : product.id }) }}">Go to product page</a>
         </div>
     {% endfor %}
+
+    <p class="center">
+        <a href="{{ path('productsList') }}" class="product__link">Go back to cat list</a>
+    </p>
 
 {% endblock %}
 
