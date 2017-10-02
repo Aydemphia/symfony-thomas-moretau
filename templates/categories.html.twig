@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <header>
+        <h1>Our cat categories :</h1>
+    </header>
+
+        {% for category in categories %}
+        <div class="product">
+            <h2 class="product__name">{{ category.name }}</h2>
+            <a href="{{ category.id }}" class="product__link">See all products</a>
+        </div>
+    {% endfor %}
+
+{% endblock %}

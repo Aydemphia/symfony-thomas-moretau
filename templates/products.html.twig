@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <header>
+        <h1>Our cats</h1>
+        <a href="{{ path('form') }}" class="product__link">Add a product</a>
+    </header>
+
+    {% for product in products %}
+
+        <a href="{{ product.id }}">
+            <div class="product">
+                <div class="product__thumbnail" style="background-image: url('/uploads/{{ product.image }}')"></div>
+                <h1 class="product__name">{{ product.name }} <br/><i class="product__price">${{ product.price / 100 }}</i>
+                </h1>
+                <span class="product__description">{{ product.description|raw }}</span><br/>
+                <a href="{{ product.id }}" class="product__link">More details about this cat</a>
+            </div>
+        </a>
+    {% endfor %}
+
+{% endblock %}

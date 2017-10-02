@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div>
+
+        <a href="{{ path('productsList') }}" class="product__link">Go to product list</a><br>
+        <a href="{{ path('categories') }}" class="product__link">Go to categories list</a>
+
+        {% for product in products %}
+
+            {{ product.name }}
+
+        {% endfor %}
+
+    </div>
+{% endblock %}
